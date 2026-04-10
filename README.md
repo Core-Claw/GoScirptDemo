@@ -1,4 +1,4 @@
-[English](https://docs.cafescraper.com/go-actor) | [中文](https://docs.cafescraper.com/cn/actor/actor/go-actor)
+[English](https://docs.coreclaw.com/go-actor) | [中文](https://docs.coreclaw.com/cn/actor/actor/go-actor)
 
 
 ### Required Files (Located in Project Root)
@@ -56,7 +56,7 @@ When the script starts, you can pass configuration parameters from outside (e.g.
 ```go
 // Get all input parameters as a JSON string
 ctx := context.Background()
-inputJSON, _ := cafesdk.Parameter.GetInputJSONString(ctx)
+inputJSON, _ := coresdk.Parameter.GetInputJSONString(ctx)
 
 // Example: assuming website URL and keyword are provided
 // Possible return: {"website": "example.com", "keyword": "Tech News"}
@@ -107,7 +107,7 @@ Before pushing data, define the table structure like Excel column headers:
 ```go
 
 // Set table header
-headers := []*cafesdk.TableHeaderItem{
+headers := []*coresdk.TableHeaderItem{
     {
         Label:  "Title",
         Key:    "title",
@@ -120,7 +120,7 @@ headers := []*cafesdk.TableHeaderItem{
     },
 }
 ctx := context.Background()
-res, err := cafesdk.Result.SetTableHeader(ctx, headers)
+res, err := coresdk.Result.SetTableHeader(ctx, headers)
 
 ```
 
@@ -155,9 +155,9 @@ ctx := context.Background()
 for _, datum := range resultData {
     jsonBytes, _ := json.Marshal(datum)
 
-    res, err := cafesdk.Result.PushData(ctx, string(jsonBytes))
+    res, err := coresdk.Result.PushData(ctx, string(jsonBytes))
     if err != nil {
-        cafesdk.Log.Error(ctx, fmt.Sprintf("Push data failed: %v", err))
+        coresdk.Log.Error(ctx, fmt.Sprintf("Push data failed: %v", err))
         return
     }
     fmt.Printf("PushData Response: %+v\n", res)
@@ -178,7 +178,7 @@ for _, datum := range resultData {
 ### ⚠️ Common Issues and Precautions
 
 1. File Location: Ensure the three SDK files are in the same folder as the main script
-2. Import Method: Call functions directly via SDK or CafeSDK
+2. Import Method: Call functions directly via SDK or CoreSDK
 3. Key Consistency: Pushed data keys must match header keys exactly
 4. Error Handling: Check return results for each SDK call, especially when pushing data
 
@@ -198,7 +198,7 @@ import (
     "encoding/json"
     "fmt"
     "os"
-    cafesdk "test/GoSdk"
+    coresdk "test/GoSdk"
     "time"
 )
 
@@ -215,26 +215,26 @@ func run() {
     ctx := context.Background()
 
     // 1. Get input parameters
-    inputJSON, err := cafesdk.Parameter.GetInputJSONString(ctx)
+    inputJSON, err := coresdk.Parameter.GetInputJSONString(ctx)
     if err != nil {
-        cafesdk.Log.Error(ctx, fmt.Sprintf("Failed to get input parameters: %v", err))
+        coresdk.Log.Error(ctx, fmt.Sprintf("Failed to get input parameters: %v", err))
         return
     }
-    cafesdk.Log.Debug(ctx, fmt.Sprintf("Input parameters: %s", inputJSON))
+    coresdk.Log.Debug(ctx, fmt.Sprintf("Input parameters: %s", inputJSON))
 
     // 2. Get proxy configuration
-    proxyDomain := "proxy-inner.cafescraper.com:6000"
+    proxyDomain := "proxy-inner.coreclaw.com:6000"
 
     var proxyAuth string
     proxyAuth = os.Getenv("PROXY_AUTH")
-    cafesdk.Log.Info(ctx, fmt.Sprintf("Proxy authentication: %s", proxyAuth))
+    coresdk.Log.Info(ctx, fmt.Sprintf("Proxy authentication: %s", proxyAuth))
 
     // 3. Build proxy URL
     var proxyURL string
     if proxyAuth != "" {
         proxyURL = fmt.Sprintf("socks5://%s@%s", proxyAuth, proxyDomain)
     }
-    cafesdk.Log.Info(ctx, fmt.Sprintf("Proxy URL: %s", proxyURL))
+    coresdk.Log.Info(ctx, fmt.Sprintf("Proxy URL: %s", proxyURL))
 
     // Create custom HTTP client with proxy support
     httpClient := &http.Client{
@@ -244,7 +244,7 @@ func run() {
     if proxyURL != "" {
         proxyParsed, err := url.Parse(proxyURL)
         if err != nil {
-            cafesdk.Log.Error(ctx, fmt.Sprintf("Failed to parse proxy URL: %v", err))
+            coresdk.Log.Error(ctx, fmt.Sprintf("Failed to parse proxy URL: %v", err))
             return
         }
 
@@ -255,37 +255,37 @@ func run() {
             },
         }
 
-        cafesdk.Log.Info(ctx, "Proxy client configured")
+        coresdk.Log.Info(ctx, "Proxy client configured")
     }
 
     // 4. Business logic (example)
-    cafesdk.Log.Info(ctx, "Start processing business logic")
+    coresdk.Log.Info(ctx, "Start processing business logic")
     targetURL := "https://ipinfo.io/ip"
     req, err := http.NewRequestWithContext(ctx, "GET", targetURL, nil)
     if err != nil {
-        cafesdk.Log.Error(ctx, fmt.Sprintf("Failed to create request: %v", err))
+        coresdk.Log.Error(ctx, fmt.Sprintf("Failed to create request: %v", err))
         return
     }
 
-    cafesdk.Log.Info(ctx, fmt.Sprintf("Requesting: %s", targetURL))
+    coresdk.Log.Info(ctx, fmt.Sprintf("Requesting: %s", targetURL))
     resp, err := httpClient.Do(req)
     if err != nil {
-        cafesdk.Log.Error(ctx, fmt.Sprintf("Request failed: %v", err))
+        coresdk.Log.Error(ctx, fmt.Sprintf("Request failed: %v", err))
         return
     }
     defer resp.Body.Close()
 
-    cafesdk.Log.Info(ctx, fmt.Sprintf("Response status code: %d", resp.StatusCode))
+    coresdk.Log.Info(ctx, fmt.Sprintf("Response status code: %d", resp.StatusCode))
 
     body, err := io.ReadAll(resp.Body)
     if err != nil {
-        cafesdk.Log.Error(ctx, fmt.Sprintf("Failed to read response: %v", err))
+        coresdk.Log.Error(ctx, fmt.Sprintf("Failed to read response: %v", err))
         return
     }
 
     ip := strings.TrimSpace(string(body))
-    cafesdk.Log.Info(ctx, fmt.Sprintf("Current IP: %s", ip))
-    cafesdk.Log.Info(ctx, "Business logic completed")
+    coresdk.Log.Info(ctx, fmt.Sprintf("Current IP: %s", ip))
+    coresdk.Log.Info(ctx, "Business logic completed")
 
     // 5. Push result data
     type result struct {
@@ -301,16 +301,16 @@ func run() {
     for _, datum := range resultData {
         jsonBytes, _ := json.Marshal(datum)
 
-        res, err := cafesdk.Result.PushData(ctx, string(jsonBytes))
+        res, err := coresdk.Result.PushData(ctx, string(jsonBytes))
         if err != nil {
-            cafesdk.Log.Error(ctx, fmt.Sprintf("Push data failed: %v", err))
+            coresdk.Log.Error(ctx, fmt.Sprintf("Push data failed: %v", err))
             return
         }
         fmt.Printf("PushData Response: %+v\n", res)
     }
 
     // 6. Set table header
-    headers := []*cafesdk.TableHeaderItem{
+    headers := []*coresdk.TableHeaderItem{
         {
             Label:  "Title",
             Key:    "title",
@@ -323,14 +323,14 @@ func run() {
         },
     }
 
-    res, err := cafesdk.Result.SetTableHeader(ctx, headers)
+    res, err := coresdk.Result.SetTableHeader(ctx, headers)
     if err != nil {
-        cafesdk.Log.Error(ctx, fmt.Sprintf("Set table header failed: %v", err))
+        coresdk.Log.Error(ctx, fmt.Sprintf("Set table header failed: %v", err))
         return
     }
     fmt.Printf("SetTableHeader Response: %+v\n", res)
 
-    cafesdk.Log.Info(ctx, "Script execution completed")
+    coresdk.Log.Info(ctx, "Script execution completed")
 }
 
 func main() {

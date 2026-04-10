@@ -2,9 +2,9 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        v3.21.12
-// source: cafesdk/sdk.proto
+// source: sdk.proto
 
-package cafesdk
+package coresdk
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -33,7 +33,7 @@ type InputJSONStringResponse struct {
 
 func (x *InputJSONStringResponse) Reset() {
 	*x = InputJSONStringResponse{}
-	mi := &file_cafesdk_sdk_proto_msgTypes[0]
+	mi := &file_sdk_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -45,7 +45,7 @@ func (x *InputJSONStringResponse) String() string {
 func (*InputJSONStringResponse) ProtoMessage() {}
 
 func (x *InputJSONStringResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_cafesdk_sdk_proto_msgTypes[0]
+	mi := &file_sdk_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -58,7 +58,7 @@ func (x *InputJSONStringResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use InputJSONStringResponse.ProtoReflect.Descriptor instead.
 func (*InputJSONStringResponse) Descriptor() ([]byte, []int) {
-	return file_cafesdk_sdk_proto_rawDescGZIP(), []int{0}
+	return file_sdk_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *InputJSONStringResponse) GetCode() int32 {
@@ -84,7 +84,7 @@ type TableHeader struct {
 
 func (x *TableHeader) Reset() {
 	*x = TableHeader{}
-	mi := &file_cafesdk_sdk_proto_msgTypes[1]
+	mi := &file_sdk_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -96,7 +96,7 @@ func (x *TableHeader) String() string {
 func (*TableHeader) ProtoMessage() {}
 
 func (x *TableHeader) ProtoReflect() protoreflect.Message {
-	mi := &file_cafesdk_sdk_proto_msgTypes[1]
+	mi := &file_sdk_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -109,7 +109,7 @@ func (x *TableHeader) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TableHeader.ProtoReflect.Descriptor instead.
 func (*TableHeader) Descriptor() ([]byte, []int) {
-	return file_cafesdk_sdk_proto_rawDescGZIP(), []int{1}
+	return file_sdk_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *TableHeader) GetHeaders() []*TableHeaderItem {
@@ -131,7 +131,7 @@ type TableHeaderItem struct {
 
 func (x *TableHeaderItem) Reset() {
 	*x = TableHeaderItem{}
-	mi := &file_cafesdk_sdk_proto_msgTypes[2]
+	mi := &file_sdk_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -143,7 +143,7 @@ func (x *TableHeaderItem) String() string {
 func (*TableHeaderItem) ProtoMessage() {}
 
 func (x *TableHeaderItem) ProtoReflect() protoreflect.Message {
-	mi := &file_cafesdk_sdk_proto_msgTypes[2]
+	mi := &file_sdk_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -156,7 +156,7 @@ func (x *TableHeaderItem) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TableHeaderItem.ProtoReflect.Descriptor instead.
 func (*TableHeaderItem) Descriptor() ([]byte, []int) {
-	return file_cafesdk_sdk_proto_rawDescGZIP(), []int{2}
+	return file_sdk_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *TableHeaderItem) GetLabel() string {
@@ -189,7 +189,7 @@ type Data struct {
 
 func (x *Data) Reset() {
 	*x = Data{}
-	mi := &file_cafesdk_sdk_proto_msgTypes[3]
+	mi := &file_sdk_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -201,7 +201,7 @@ func (x *Data) String() string {
 func (*Data) ProtoMessage() {}
 
 func (x *Data) ProtoReflect() protoreflect.Message {
-	mi := &file_cafesdk_sdk_proto_msgTypes[3]
+	mi := &file_sdk_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -214,7 +214,7 @@ func (x *Data) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Data.ProtoReflect.Descriptor instead.
 func (*Data) Descriptor() ([]byte, []int) {
-	return file_cafesdk_sdk_proto_rawDescGZIP(), []int{3}
+	return file_sdk_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *Data) GetJsonString() string {
@@ -233,7 +233,7 @@ type LogBody struct {
 
 func (x *LogBody) Reset() {
 	*x = LogBody{}
-	mi := &file_cafesdk_sdk_proto_msgTypes[4]
+	mi := &file_sdk_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -245,7 +245,7 @@ func (x *LogBody) String() string {
 func (*LogBody) ProtoMessage() {}
 
 func (x *LogBody) ProtoReflect() protoreflect.Message {
-	mi := &file_cafesdk_sdk_proto_msgTypes[4]
+	mi := &file_sdk_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -258,7 +258,7 @@ func (x *LogBody) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LogBody.ProtoReflect.Descriptor instead.
 func (*LogBody) Descriptor() ([]byte, []int) {
-	return file_cafesdk_sdk_proto_rawDescGZIP(), []int{4}
+	return file_sdk_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *LogBody) GetLog() string {
@@ -278,7 +278,7 @@ type Response struct {
 
 func (x *Response) Reset() {
 	*x = Response{}
-	mi := &file_cafesdk_sdk_proto_msgTypes[5]
+	mi := &file_sdk_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -290,7 +290,7 @@ func (x *Response) String() string {
 func (*Response) ProtoMessage() {}
 
 func (x *Response) ProtoReflect() protoreflect.Message {
-	mi := &file_cafesdk_sdk_proto_msgTypes[5]
+	mi := &file_sdk_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -303,7 +303,7 @@ func (x *Response) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Response.ProtoReflect.Descriptor instead.
 func (*Response) Descriptor() ([]byte, []int) {
-	return file_cafesdk_sdk_proto_rawDescGZIP(), []int{5}
+	return file_sdk_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *Response) GetCode() int32 {
@@ -320,35 +320,35 @@ func (x *Response) GetMessage() string {
 	return ""
 }
 
-var file_cafesdk_sdk_proto_extTypes = []protoimpl.ExtensionInfo{
+var file_sdk_proto_extTypes = []protoimpl.ExtensionInfo{
 	{
 		ExtendedType:  (*descriptorpb.FieldOptions)(nil),
 		ExtensionType: (*string)(nil),
 		Field:         50000,
-		Name:          "cafesdk.allowed_values",
+		Name:          "coresdk.allowed_values",
 		Tag:           "bytes,50000,opt,name=allowed_values",
-		Filename:      "cafesdk/sdk.proto",
+		Filename:      "sdk.proto",
 	},
 }
 
 // Extension fields to descriptorpb.FieldOptions.
 var (
 	// optional string allowed_values = 50000;
-	E_AllowedValues = &file_cafesdk_sdk_proto_extTypes[0]
+	E_AllowedValues = &file_sdk_proto_extTypes[0]
 )
 
-var File_cafesdk_sdk_proto protoreflect.FileDescriptor
+var File_sdk_proto protoreflect.FileDescriptor
 
-const file_cafesdk_sdk_proto_rawDesc = "" +
+const file_sdk_proto_rawDesc = "" +
 	"\n" +
-	"\x11cafesdk/sdk.proto\x12\acafesdk\x1a\x1bgoogle/protobuf/empty.proto\x1a google/protobuf/descriptor.proto\"M\n" +
+	"\tsdk.proto\x12\acoresdk\x1a\x1bgoogle/protobuf/empty.proto\x1a google/protobuf/descriptor.proto\"M\n" +
 	"\x17InputJSONStringResponse\x12\x12\n" +
 	"\x04code\x18\x01 \x01(\x05R\x04code\x12\x1e\n" +
 	"\n" +
 	"jsonString\x18\x02 \x01(\tR\n" +
 	"jsonString\"A\n" +
 	"\vTableHeader\x122\n" +
-	"\aheaders\x18\x01 \x03(\v2\x18.cafesdk.TableHeaderItemR\aheaders\"Q\n" +
+	"\aheaders\x18\x01 \x03(\v2\x18.coresdk.TableHeaderItemR\aheaders\"Q\n" +
 	"\x0fTableHeaderItem\x12\x14\n" +
 	"\x05label\x18\x01 \x01(\tR\x05label\x12\x10\n" +
 	"\x03key\x18\x02 \x01(\tR\x03key\x12\x16\n" +
@@ -363,58 +363,58 @@ const file_cafesdk_sdk_proto_rawDesc = "" +
 	"\x04code\x18\x01 \x01(\x05R\x04code\x12\x18\n" +
 	"\amessage\x18\x02 \x01(\tR\amessage2]\n" +
 	"\tParameter\x12P\n" +
-	"\x12GetInputJSONString\x12\x16.google.protobuf.Empty\x1a .cafesdk.InputJSONStringResponse\"\x002u\n" +
+	"\x12GetInputJSONString\x12\x16.google.protobuf.Empty\x1a .coresdk.InputJSONStringResponse\"\x002u\n" +
 	"\x06Result\x12;\n" +
-	"\x0eSetTableHeader\x12\x14.cafesdk.TableHeader\x1a\x11.cafesdk.Response\"\x00\x12.\n" +
-	"\bPushData\x12\r.cafesdk.Data\x1a\x11.cafesdk.Response\"\x002\xc3\x01\n" +
+	"\x0eSetTableHeader\x12\x14.coresdk.TableHeader\x1a\x11.coresdk.Response\"\x00\x12.\n" +
+	"\bPushData\x12\r.coresdk.Data\x1a\x11.coresdk.Response\"\x002\xc3\x01\n" +
 	"\x03Log\x12.\n" +
-	"\x05Debug\x12\x10.cafesdk.LogBody\x1a\x11.cafesdk.Response\"\x00\x12-\n" +
-	"\x04Info\x12\x10.cafesdk.LogBody\x1a\x11.cafesdk.Response\"\x00\x12-\n" +
-	"\x04Warn\x12\x10.cafesdk.LogBody\x1a\x11.cafesdk.Response\"\x00\x12.\n" +
-	"\x05Error\x12\x10.cafesdk.LogBody\x1a\x11.cafesdk.Response\"\x00:F\n" +
+	"\x05Debug\x12\x10.coresdk.LogBody\x1a\x11.coresdk.Response\"\x00\x12-\n" +
+	"\x04Info\x12\x10.coresdk.LogBody\x1a\x11.coresdk.Response\"\x00\x12-\n" +
+	"\x04Warn\x12\x10.coresdk.LogBody\x1a\x11.coresdk.Response\"\x00\x12.\n" +
+	"\x05Error\x12\x10.coresdk.LogBody\x1a\x11.coresdk.Response\"\x00:F\n" +
 	"\x0eallowed_values\x12\x1d.google.protobuf.FieldOptions\x18І\x03 \x01(\tR\rallowedValuesB\fZ\n" +
-	"./;cafesdkb\x06proto3"
+	"./;coresdkb\x06proto3"
 
 var (
-	file_cafesdk_sdk_proto_rawDescOnce sync.Once
-	file_cafesdk_sdk_proto_rawDescData []byte
+	file_sdk_proto_rawDescOnce sync.Once
+	file_sdk_proto_rawDescData []byte
 )
 
-func file_cafesdk_sdk_proto_rawDescGZIP() []byte {
-	file_cafesdk_sdk_proto_rawDescOnce.Do(func() {
-		file_cafesdk_sdk_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_cafesdk_sdk_proto_rawDesc), len(file_cafesdk_sdk_proto_rawDesc)))
+func file_sdk_proto_rawDescGZIP() []byte {
+	file_sdk_proto_rawDescOnce.Do(func() {
+		file_sdk_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_sdk_proto_rawDesc), len(file_sdk_proto_rawDesc)))
 	})
-	return file_cafesdk_sdk_proto_rawDescData
+	return file_sdk_proto_rawDescData
 }
 
-var file_cafesdk_sdk_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
-var file_cafesdk_sdk_proto_goTypes = []any{
-	(*InputJSONStringResponse)(nil),   // 0: cafesdk.InputJSONStringResponse
-	(*TableHeader)(nil),               // 1: cafesdk.TableHeader
-	(*TableHeaderItem)(nil),           // 2: cafesdk.TableHeaderItem
-	(*Data)(nil),                      // 3: cafesdk.Data
-	(*LogBody)(nil),                   // 4: cafesdk.LogBody
-	(*Response)(nil),                  // 5: cafesdk.Response
+var file_sdk_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
+var file_sdk_proto_goTypes = []any{
+	(*InputJSONStringResponse)(nil),   // 0: coresdk.InputJSONStringResponse
+	(*TableHeader)(nil),               // 1: coresdk.TableHeader
+	(*TableHeaderItem)(nil),           // 2: coresdk.TableHeaderItem
+	(*Data)(nil),                      // 3: coresdk.Data
+	(*LogBody)(nil),                   // 4: coresdk.LogBody
+	(*Response)(nil),                  // 5: coresdk.Response
 	(*descriptorpb.FieldOptions)(nil), // 6: google.protobuf.FieldOptions
 	(*emptypb.Empty)(nil),             // 7: google.protobuf.Empty
 }
-var file_cafesdk_sdk_proto_depIdxs = []int32{
-	2, // 0: cafesdk.TableHeader.headers:type_name -> cafesdk.TableHeaderItem
-	6, // 1: cafesdk.allowed_values:extendee -> google.protobuf.FieldOptions
-	7, // 2: cafesdk.Parameter.GetInputJSONString:input_type -> google.protobuf.Empty
-	1, // 3: cafesdk.Result.SetTableHeader:input_type -> cafesdk.TableHeader
-	3, // 4: cafesdk.Result.PushData:input_type -> cafesdk.Data
-	4, // 5: cafesdk.Log.Debug:input_type -> cafesdk.LogBody
-	4, // 6: cafesdk.Log.Info:input_type -> cafesdk.LogBody
-	4, // 7: cafesdk.Log.Warn:input_type -> cafesdk.LogBody
-	4, // 8: cafesdk.Log.Error:input_type -> cafesdk.LogBody
-	0, // 9: cafesdk.Parameter.GetInputJSONString:output_type -> cafesdk.InputJSONStringResponse
-	5, // 10: cafesdk.Result.SetTableHeader:output_type -> cafesdk.Response
-	5, // 11: cafesdk.Result.PushData:output_type -> cafesdk.Response
-	5, // 12: cafesdk.Log.Debug:output_type -> cafesdk.Response
-	5, // 13: cafesdk.Log.Info:output_type -> cafesdk.Response
-	5, // 14: cafesdk.Log.Warn:output_type -> cafesdk.Response
-	5, // 15: cafesdk.Log.Error:output_type -> cafesdk.Response
+var file_sdk_proto_depIdxs = []int32{
+	2, // 0: coresdk.TableHeader.headers:type_name -> coresdk.TableHeaderItem
+	6, // 1: coresdk.allowed_values:extendee -> google.protobuf.FieldOptions
+	7, // 2: coresdk.Parameter.GetInputJSONString:input_type -> google.protobuf.Empty
+	1, // 3: coresdk.Result.SetTableHeader:input_type -> coresdk.TableHeader
+	3, // 4: coresdk.Result.PushData:input_type -> coresdk.Data
+	4, // 5: coresdk.Log.Debug:input_type -> coresdk.LogBody
+	4, // 6: coresdk.Log.Info:input_type -> coresdk.LogBody
+	4, // 7: coresdk.Log.Warn:input_type -> coresdk.LogBody
+	4, // 8: coresdk.Log.Error:input_type -> coresdk.LogBody
+	0, // 9: coresdk.Parameter.GetInputJSONString:output_type -> coresdk.InputJSONStringResponse
+	5, // 10: coresdk.Result.SetTableHeader:output_type -> coresdk.Response
+	5, // 11: coresdk.Result.PushData:output_type -> coresdk.Response
+	5, // 12: coresdk.Log.Debug:output_type -> coresdk.Response
+	5, // 13: coresdk.Log.Info:output_type -> coresdk.Response
+	5, // 14: coresdk.Log.Warn:output_type -> coresdk.Response
+	5, // 15: coresdk.Log.Error:output_type -> coresdk.Response
 	9, // [9:16] is the sub-list for method output_type
 	2, // [2:9] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name
@@ -422,27 +422,27 @@ var file_cafesdk_sdk_proto_depIdxs = []int32{
 	0, // [0:1] is the sub-list for field type_name
 }
 
-func init() { file_cafesdk_sdk_proto_init() }
-func file_cafesdk_sdk_proto_init() {
-	if File_cafesdk_sdk_proto != nil {
+func init() { file_sdk_proto_init() }
+func file_sdk_proto_init() {
+	if File_sdk_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_cafesdk_sdk_proto_rawDesc), len(file_cafesdk_sdk_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sdk_proto_rawDesc), len(file_sdk_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   6,
 			NumExtensions: 1,
 			NumServices:   3,
 		},
-		GoTypes:           file_cafesdk_sdk_proto_goTypes,
-		DependencyIndexes: file_cafesdk_sdk_proto_depIdxs,
-		MessageInfos:      file_cafesdk_sdk_proto_msgTypes,
-		ExtensionInfos:    file_cafesdk_sdk_proto_extTypes,
+		GoTypes:           file_sdk_proto_goTypes,
+		DependencyIndexes: file_sdk_proto_depIdxs,
+		MessageInfos:      file_sdk_proto_msgTypes,
+		ExtensionInfos:    file_sdk_proto_extTypes,
 	}.Build()
-	File_cafesdk_sdk_proto = out.File
-	file_cafesdk_sdk_proto_goTypes = nil
-	file_cafesdk_sdk_proto_depIdxs = nil
+	File_sdk_proto = out.File
+	file_sdk_proto_goTypes = nil
+	file_sdk_proto_depIdxs = nil
 }
