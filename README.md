@@ -222,8 +222,12 @@ func run() {
     }
     coresdk.Log.Debug(ctx, fmt.Sprintf("Input parameters: %s", inputJSON))
 
-    // 2. Get proxy configuration
-    proxyDomain := "proxy-inner.coreclaw.com:6000"
+    // 2. Get proxy configuration (read from environment variable for flexible deployment)
+    proxyDomain := os.Getenv("PROXY_DOMAIN")
+    if proxyDomain == "" {
+        proxyDomain = "proxy-inner.coreclaw.com:6000"
+    }
+    coresdk.Log.Info(ctx, fmt.Sprintf("Proxy domain: %s", proxyDomain))
 
     var proxyAuth string
     proxyAuth = os.Getenv("PROXY_AUTH")

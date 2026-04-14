@@ -28,8 +28,12 @@ func run() {
 	}
 	coresdk.Log.Debug(ctx, fmt.Sprintf("输入参数: %s", inputJSON))
 
-	// 2. 获取代理配置
-	proxyDomain := "proxy-inner.coreclaw.com:6000"
+	// 2. 获取代理配置（从环境变量读取，支持灵活部署）
+	proxyDomain := os.Getenv("PROXY_DOMAIN")
+	if proxyDomain == "" {
+		proxyDomain = "proxy-inner.coreclaw.com:6000"
+	}
+	coresdk.Log.Info(ctx, fmt.Sprintf("代理域名: %s", proxyDomain))
 
 	var proxyAuth string
 	proxyAuth = os.Getenv("PROXY_AUTH")
