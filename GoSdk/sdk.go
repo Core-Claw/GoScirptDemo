@@ -51,6 +51,10 @@ func (_Result) SetTableHeader(ctx context.Context, headers []*TableHeaderItem) (
 	return _resultClient.SetTableHeader(ctx, &TableHeader{Headers: headers})
 }
 
+func (_Result) PushData(ctx context.Context, jsonString string) (*Response, error) {
+	return _resultClient.PushData(ctx, &Data{JsonString: jsonString})
+}
+
 func (_Log) Debug(ctx context.Context, text string) (*Response, error) {
 	return _logClient.Debug(ctx, &LogBody{Log: text})
 }
